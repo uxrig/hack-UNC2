@@ -281,9 +281,10 @@ form div {
 -------------------------------------------------------------- */
 
 .navbar .brand {
-	font-family: 'Pacifico', cursive;
+	font-family: 'Arial', cursive;
 	color: #ff0000;
 	font-size: 24px;
+	text-align:center;
 }
 
 
@@ -1386,6 +1387,41 @@ BDO[DIR="rtl"] {
 	
 	}
 }
+
+
+
+
+
+
+
+/* SINGLE.HTML */
+
+/* Rounded avatars */
+.avatar {
+    float: left;
+    margin-top: 1em;
+    margin-right: 1em;
+    position: relative;
+    height:50px;
+    width:50px;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+   
+}
+
+.dish-info {margin: 0px 0px 40px 0px;}
+.dish-info li { 
+	list-style: none; 
+	border-bottom: 1px dashed #a9a9a9;;
+	padding: 10px; }
+.dish-info li h6 {display: inline; margin-right: 5px;}
+
+.lead {line-height:28px; margin: 20px 0px 30px 0px; }
+
+
 /*"The last 29 days of the month are the hardest."- Nikola Tesla*/
 
 .more-link{
