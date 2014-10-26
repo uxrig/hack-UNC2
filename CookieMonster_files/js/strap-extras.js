@@ -19,7 +19,7 @@ jQuery('#tiles').imagesLoaded(function() {
       autoResize: true, // This will auto-update the layout when the browser window is resized.
       container: jQuery('#main'), // Optional, used for some extra CSS styling
       offset: 5, // Optional, the distance between grid items
-      itemWidth: 230 // Optional, the width of a grid item
+      itemWidth: 200 // Optional, the width of a grid item
     };
     
     /**

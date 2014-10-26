@@ -22,6 +22,8 @@ See: http://codex.wordpress.org/Child_Themes
 -------------------------------------------------------------- */
 html {
 	height:100%;
+		background-image: url(../images/background2.jpg);
+        background-repeat: repeat 
 }
 
 body {
@@ -33,7 +35,7 @@ body {
 	text-rendering:optimizeLegibility;
 	padding-top: 60px;
 	height: 100%;
-	background: url(images/redox_01.png) repeat;
+	background: url(images/background2.jpg) repeat;
 	font-weight: 400;
 }
 
@@ -1483,7 +1485,7 @@ strong.search-excerpt { background: yellow; }
  * Grid items
  */
 #tiles li {
-	width: 150px;
+	width: 180px;
 	background-color: #ffffff;
 	border: 1px solid #dedede;
 	-moz-border-radius: 2px;
@@ -1520,8 +1522,7 @@ a#inifiniteLoader{
 } 
 
 .view {
-    width: 150px;
-    height: 250px;
+    width: 180px;
     float: left;
     overflow: hidden;
     position: relative;
@@ -1582,32 +1583,5 @@ a#inifiniteLoader{
     background-color: rgba(255,255,255, 0.7); 
     transition: all 0.4s ease-in-out;
 }
-.view-first h2 {
-    transform: translateY(-100px);
-    opacity: 0;
-    transition: all 0.2s ease-in-out;
-}
-.view-first p { 
-    transform: translateY(100px);
-    opacity: 0;
-    transition: all 0.2s linear;
-}
-.view-first a.info{
-    opacity: 0;
-    transition: all 0.2s ease-in-out;
-}
 
-.view-first:hover img { 
-    transform: scale(1.1);
-} 
-.view-first:hover .mask { 
-    opacity: 1;
-}
-.view-first:hover h2,
-.view-first:hover p {
-    opacity: 1;
-    transform: translateY(0px);
-}
-.view-first:hover p {
-    transition-delay: 0.1s;
-}
+

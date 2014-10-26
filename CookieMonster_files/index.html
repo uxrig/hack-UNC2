@@ -46,41 +46,35 @@ var CGMPGlobal = {"ajaxurl":"http:\/\/bragthemes.com\/demo\/pinstrap\/wp-admin\/
     <script type="text/javascript">
     // <![CDATA[
     jQuery(document).ready(function($){
-        $("a[rel='colorbox']").colorbox({
-                transition:'elastic', 
-                opacity:'0.7', 
-                maxHeight:'90%'
-        });
-        $("a.gallery").colorbox({
-                rel:'group'
-        });
-        $("a[rel='colorboxvideo']").colorbox({
-                iframe:true, 
-                transition:'elastic', 
-                opacity:'0.7',
-                innerWidth:'60%', 
-                innerHeight:'80%'
-        });
+ 
 
        
-        function createDiv(id, text,imageNum){
+        function createDiv(id, text,imageNum,price,plates,timey){
          
-         var newPost =  "<li><div id='"+ id  +"'> <div class='post-home'> <div class='view view-first'><a href='single.html/"+ id +"' title='Item1'>"
-         newPost = newPost + "<img width='150' height='250' src='images/img"+ imageNum +".jpg' class='attachment-hp-thumb wp-post-image' alt='link'/></a>"
-         newPost = newPost + "<div style='color:#eeffeef;padding-top:10px'>"+  text +"</div></div></div></div></li>"     
+         var height = "";
+         var newPost =  "<li class='clickitoo' style='margin-top:25px;left:10px'><div id='"+ id  +"'> <div class='post-home'> <div class='view view-first'><a href='single.html/"+ id +"' title='Item1'>";
+         newPost = newPost + "<img  min-height='250px' height='" +  height + "'' src='images/img"+ imageNum +".jpg' class='attachment-hp-thumb wp-post-image' alt='link' style='min-width:180px'/></a>"
+         newPost = newPost + "<div style='color:#eeffeef;padding-top:10px;display:block;text-align:left;'>"+  text +"</div><div style='color:#eeffeef;padding-top:10px;display:block;text-align:left;color:#EF5127;'>"+  price +"</div><div style='color:#eeffeef;padding-top:10px;display:block;text-align:left;font-size:12px'>"+  plates +"</div><div style='color:#eeffeef;padding-top:10px;display:block;text-align:left;font-size:12.5px'>"+  timey +"</div></div></div></div></li>"     
          return newPost    
         }
 
+       var namesOFDishes = ["Anna's Burger's","Jason's Turkey Burgers","Aunty Israel's Mac n Cheese","Lizard's Fajita's","Oh Honey I Shrunk the kids Burgers","Opa's McDreamy's","Papa's Tapas","Lisa's Girl Scout Cookies","Cookie Monster","Lala Lulu", "Ryan's Spaghetti" ]
 
+       var heightArray = ["250px","330px","175px","175px","250px","330px","330px","175px","175px","250px","330px","175px","175px"];
+       var priceArray = ["$5","$7","$2","$4","$8","$5","$3","$7","$6","$6","$3"];
+       var plateArray = ["3","2","2","1","4","5","2","3","7","1","2"];
+       var timeArray = ["Today 12:00 - 1:00 PM","Today 12:00 - 3:00 PM","Today 1:30 - 2:30 PM","Today 4:00 - 6:00 PM","Today 5:00 - 7:00 PM","Today 6:30 - 8:00 PM","Today 7:30 - 8:30 PM","Tomorrow 8:00 - 10:00 AM","Tomorrow 9:00 - 11:00 AM","Tomorrow 12:00 - 1:00 PM","Tomorrow 2:00 - 3:00 PM"];
         for(var count=1;count<=10;count++)
         {
           var divId =  "mydiv" + count;
-
-          $("#tiles").append(createDiv(divId,"Yummy Yumminess",count)) ;     
+          var plates = plateArray[count] + " Plates Remaining";
+          $("#tiles").append(createDiv(divId,namesOFDishes[count],count,priceArray[count],plates,timeArray[count])) ;     
         }
             
 
-
+         $( ".clickitoo" ).click(function() {
+           window.location = "single.html"
+         });
 
 
 
@@ -160,7 +154,7 @@ var CGMPGlobal = {"ajaxurl":"http:\/\/bragthemes.com\/demo\/pinstrap\/wp-admin\/
            
         
         
-       
+            
             
         
         

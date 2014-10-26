@@ -1886,9 +1886,7 @@ input.search-query {
   /* IE7-8 doesn't have border-radius, so don't indent the padding */
 
   margin-bottom: 0;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
+ 
 }
 /* Allow for input prepend/append in search forms */
 .form-search .input-append .search-query,
@@ -3107,9 +3105,7 @@ input[type="submit"].btn.btn-mini {
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
+
 }
 .navbar-static-top {
   position: static;
