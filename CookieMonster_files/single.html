@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>PinStrap</title>
+<title>Chowster</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="http://bragthemes.com/demo/pinstrap/xmlrpc.php" />
@@ -43,25 +43,31 @@ var CGMPGlobal = {"ajaxurl":"http:\/\/bragthemes.com\/demo\/pinstrap\/wp-admin\/
 /* ]]> */
 </script>
     <script type="text/javascript">
-    // <![CDATA[
     jQuery(document).ready(function($){
-        $("a[rel='colorbox']").colorbox({
-                transition:'elastic', 
-                opacity:'0.7', 
-                maxHeight:'90%'
-        });
-        $("a.gallery").colorbox({
-                rel:'group'
-        });
-        $("a[rel='colorboxvideo']").colorbox({
-                iframe:true, 
-                transition:'elastic', 
-                opacity:'0.7',
-                innerWidth:'60%', 
-                innerHeight:'80%'
-        });
-    });  
-    // ]]>
+        
+  
+    var query = window.location.search.substring(1);
+    valy = query.split("=")[1];
+    
+    var namesOFDishes = ["Anna's Burger's","Jason's Turkey Burgers","Aunty Israel's Mac n Cheese","Lizard's Fajita's","Oh Honey I Shrunk the kids Burgers","Opa's McDreamy's","Papa's Tapas","Lisa's Girl Scout Cookies","Cookie Monster","Lala Lulu", "Ryan's Spaghetti" ]
+
+       var heightArray = ["250px","330px","175px","175px","250px","330px","330px","175px","175px","250px","330px","175px","175px"];
+       var priceArray = ["$5","$7","$2","$4","$8","$5","$3","$7","$6","$6","$3"];
+       var plateArray = ["3","2","2","1","4","5","2","3","7","1","2"];
+       var timeArray = ["Today 12:00 - 1:00 PM","Today 12:00 - 3:00 PM","Today 1:30 - 2:30 PM","Today 4:00 - 6:00 PM","Today 5:00 - 7:00 PM","Today 6:30 - 8:00 PM","Today 7:30 - 8:30 PM","Tomorrow 8:00 - 10:00 AM","Tomorrow 9:00 - 11:00 AM","Tomorrow 12:00 - 1:00 PM","Tomorrow 2:00 - 3:00 PM"];
+       var cuisine = ["American","American","Chinese","Italian","European","Country","American","European","Italian","Italian","Dessert"];
+       
+     
+ //   alert("images/img" + val + ".jpg") 
+   filename = "images/img" + valy + ".jpg";
+    $("#singleImg").attr("src","images/img" + valy + ".jpg")
+    $("#nameOfItem").text(namesOFDishes[valy]);
+    $("#price").text( priceArray[valy] );
+    $("#pckTime").text(timeArray[valy]);
+   $("#plates").text(plateArray[valy]);
+   $("#cuisine").text(cuisine[valy]);
+   
+});
     </script>
 
     
@@ -70,7 +76,7 @@ var CGMPGlobal = {"ajaxurl":"http:\/\/bragthemes.com\/demo\/pinstrap\/wp-admin\/
 
 </head>
 
-<body class="home blog">
+<body class="home blog container">
                  
 
          
@@ -79,44 +85,62 @@ var CGMPGlobal = {"ajaxurl":"http:\/\/bragthemes.com\/demo\/pinstrap\/wp-admin\/
         
 			<div class="navbar navbar-fixed-top ">
 				<div class="navbar-inner">
-					<a class="brand" href="#" title="Chowster" rel="homepage">Chowster</a>
-		        </div>     
+				<div id="container" >
+				
+					<a  style="padding-left:90px" class="brand" href="www.accomplistapp.com:5003/TheCookieMonster" title="Chowster" rel="homepage">&lt;Chowster</a>
+		        </div>    
+		        </div> 
 			</div>
 	   </div><!-- end of #header -->
         
  <!--HERE BEGINS THE IMPORTANT LAYOUT STUFF -->       
-        <div id="full-width" ><!--Hero Image -->
-			<img src="images/cannoli.jpg">
+        <div id="container"  style="width:100px;background-color:black;"><!--Hero Image -->
+			<img id="singleImg" src="images/cannoli.jpg" style="">
    
 		</div><!-- end of Hero Image -->
 		
 		
-		<div><!-- Title -->
-				<span>$5</span>
-				<h2>Spaghetti Meatball</h2>
-                <h3>Italian</h3>
+		<div style=""><!-- Title -->
+				<h2 id="nameOfItem" style="font-size:24px;display:inline-block"></h2>
+				<span id="price" style="color:#EF5127;font-size:20px;margin-top:32px;margin-right:0px;float:right"><br/><br/><br/><br/></span>
+				
+				
+<br/>
+				<div id="cuisine" style="font-size:13px;margin-top:-20px;width:100%"></div>
+				<hr/>
 		</div><!-- End of Title -->
 		
 		<div><!-- Details-->
 		 
-                    <p class="lead">If Looks Could Kale</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
+                    <p>Taste the authentic flavours of Mexico with Pushina's famous carne asada fajitas</p>
 
-                    <ul class="dish-info">
-                        <li><h6>Plates Remaining:</h6> 5</li>
-                        <li><h6>Price:</h6> $7</li>
-                        <li><h6>Ingredients:</h6> Kale, Pasta, Meat Substitute, Sodium Benzoate, MSG, Parsley</li>
-                       
-                    </ul>
+                   
+                    <div style="font-size:12px">Pickup Time : <span id="pckTime"></span></div>
+                    <div style="font-size:12px">Plates Remaining : <span id="plates"></span></div>
+                    <div style="font-size:12px">Tags : 
+                    	  <span style="background-color:white;padding:4px">Gluten Free</span>
+                    	  <span style="background-color:white;padding:4px">Organice</span>
+                    	  <span style="background-color:white;padding:4px">Locally Grown</span>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div style="text-align:center">
+                    <span style="background-color:#EF5127;padding:8px;font-size:14px;color:white;text-align:center;min-width:190px;padding-left:20px;padding-right:20px">Reserve</span></div>
+                    <br/>
+                    <br/>
+                    
 		</div><!--End of Details-->
-		
+		<div style="background-color:white;color:#00ee00e;text-align:center">198 Guerreo Street, San Francisco, CA 94103</div>
 		<div><!--The Map-->
-		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2758.668579731548!2d-119.31227!3d46.25681599999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54987a9fc6b19f95%3A0xf81bbbd902ce2217!2sBob&#39;s+Burger+%26+Brew!5e0!3m2!1sen!2sus!4v1414292191748" width="600" height="450" frameborder="0" style="border:0"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2758.668579731548!2d-119.31227!3d46.25681599999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54987a9fc6b19f95%3A0xf81bbbd902ce2217!2sBob&#39;s+Burger+%26+Brew!5e0!3m2!1sen!2sus!4v1414292191748" width="100%" height="450" frameborder="0" style="border:0"></iframe>
 		</div><!--End of the Map-->
 		
-		<div><!--Profile -->
-		<img class="avatar" src="images/Bob.png" alt="avatar" /> <h5>Bob</h5>
-		<p>Robert "Bob" Belcher, Jr. is a third-generation restaurateur, and the main protagonist of the Fox animated series, Bob's Burgers. Bob runs Bob's Burgers with the help of his wife, Linda, and their three kids, Tina, Gene, and Louise.</p>
+		<div style="background-color:#323231;color:#fff;text-align:center;height:300px">
+             <img class="" src="images/abuela.png" alt="avatar" style="padding-top:100px;float:left;margin-left:10%" /> 
+		<p style="padding:120px;margin-left:150px;text-align:left">Pushina<br/>Hola! My name is Pushina, and I am originally from Mexico. I have a passion for cooking and would love to share my talents</p>
+
+		</div>
+		
 		</div><!-- End of Profile-->
 		
 		
