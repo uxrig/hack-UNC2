@@ -281,10 +281,10 @@ form div {
 -------------------------------------------------------------- */
 
 .navbar .brand {
-	font-family: 'Arial', cursive;
+	/*font-family: 'Arial', cursive;
 	color: #ff0000;
 	font-size: 24px;
-	text-align:center;
+	text-align:center; */
 }
 
 
@@ -1520,8 +1520,8 @@ a#inifiniteLoader{
 } 
 
 .view {
-    width: 220px;
-    height: 100%;
+    width: 150px;
+    height: 250px;
     float: left;
     overflow: hidden;
     position: relative;
@@ -1529,6 +1529,8 @@ a#inifiniteLoader{
     box-shadow: 1px 1px 2px #e6e6e6;
     cursor: default;
 }
+
+
 .view .mask, .view .content {
     width: 220px;
     height: 100%;
