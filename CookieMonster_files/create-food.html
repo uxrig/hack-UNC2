@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>PinStrap</title>
+<title>Create Food</title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="http://bragthemes.com/demo/pinstrap/xmlrpc.php" />
@@ -23,10 +23,17 @@
   <link rel="stylesheet" href="/css/font-awesome-ie7.css">
 <![endif]-->
 
+
+<link rel="stylesheet" href="js/tags/bootstrap-tagsinput.css">
+
+
 <link rel='stylesheet' id='bootstrap-styles-css'  href='css/bootstrap.css' type='text/css' media='all' />
 <link rel='stylesheet' id='font-awesome-css'  href='css/font-awesome.css' type='text/css' media='all' />
 <link rel='stylesheet' id='colorbox-css'  href='css/colorbox.css' type='text/css' media='all' />
 <link rel='stylesheet' id='responsive-style-css'  href='css/style.css' type='text/css' media='all' />
+
+<link href="css/datepicker.css" rel="stylesheet">
+
 <script type='text/javascript' src='js/jquery.js'></script>
 <script type='text/javascript' src='js/jquery-migrate.min.js'></script>
 <script type='text/javascript' src='js/responsive-modernizr.js'></script>
@@ -66,6 +73,16 @@ var CGMPGlobal = {"ajaxurl":"http:\/\/bragthemes.com\/demo\/pinstrap\/wp-admin\/
     </script>
 
     
+<!-- time picker-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link type="text/css" href="css/bootstrap.min.css" />
+        <link type="text/css" href="css/bootstrap-timepicker.min.css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-2.2.2.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
+        
+        <!-- end of time picker-->
 
 </head>
 
@@ -119,9 +136,57 @@ var CGMPGlobal = {"ajaxurl":"http:\/\/bragthemes.com\/demo\/pinstrap\/wp-admin\/
         
     <div class="container">
         <div id="wrapper" class="clearfix">
-        
-        Hello
-        </div>
+        		<!--<p class="help-block">Instructions here</p> -->
+			  <form role="form">
+			    <div class="form-group">
+			    <label for="exampleInputFile">Add Photo</label>
+			    <input type="file" id="exampleInputFile">
+			    
+			  </div>
+			  
+			  
+			  <div class="form-group">
+			    <label for="NameOfTheDish">Name of the dish</label>
+			    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="eg Pasta">
+			  </div>
+			  
+			  <div class="form-group">
+			    <label for="Category">Category</label>
+			    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="eg Italian">
+			  </div>
+			  
+			  <div class="form-group">
+			    <label for="NumberOfDishes">Number of Dishes</label>
+			      <select class="form-control">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+			  </div>
+			  
+			    <div class="form-group">
+			    <label for="Price">Price</label>
+			    <input type="text" class="form-control" id="Price" placeholder="$">
+			  </div>
+			  
+			  
+			 
+            <input type="text" class="span2" value="02-16-2012" id="dp1" >
+         		   
+			
+   
+          <div class="bs-example">
+            <input type="text" value="Food,Dinner,Organic" data-role="tagsinput" />
+          </div>
+    
+          
+			
+		
+			  <button type="submit" class="btn btn-default">Submit</button>
+			</form>
+     </div>
         
    
 		</div><!-- end of container -->
@@ -137,6 +202,80 @@ var CGMPGlobal = {"ajaxurl":"http:\/\/bragthemes.com\/demo\/pinstrap\/wp-admin\/
 <script type='text/javascript' src='js/responsive-plugins.js'></script>
 <script type='text/javascript' src='js/jquery.colorbox-min.js'></script>
 
+ <script src='js/tags/bootstrap-tagsinput-angular.js'></script>
+ <script src='js/tags/bootstrap-tagsinput-angular.min.js'></script> 
+ <script src='js/tags/bootstrap-tagsinput.js'></script>
+ <script src='js/tags/bootstrap-tagsinput.min.js'></script>
+ 
+ <script src='js/bootstrap-datepicker.js'></script>
+ <script>
+	if (top.location != location) {
+    top.location.href = document.location.href ;
+  }
+		$(function(){
+			window.prettyPrint && prettyPrint();
+			$('#dp1').datepicker({
+				format: 'mm-dd-yyyy'
+			});
+			$('#dp2').datepicker();
+			$('#dp3').datepicker();
+			$('#dp3').datepicker();
+			$('#dpYears').datepicker();
+			$('#dpMonths').datepicker();
+			
+			
+			var startDate = new Date(2012,1,20);
+			var endDate = new Date(2012,1,25);
+			$('#dp4').datepicker()
+				.on('changeDate', function(ev){
+					if (ev.date.valueOf() > endDate.valueOf()){
+						$('#alert').show().find('strong').text('The start date can not be greater then the end date');
+					} else {
+						$('#alert').hide();
+						startDate = new Date(ev.date);
+						$('#startDate').text($('#dp4').data('date'));
+					}
+					$('#dp4').datepicker('hide');
+				});
+			$('#dp5').datepicker()
+				.on('changeDate', function(ev){
+					if (ev.date.valueOf() < startDate.valueOf()){
+						$('#alert').show().find('strong').text('The end date can not be less then the start date');
+					} else {
+						$('#alert').hide();
+						endDate = new Date(ev.date);
+						$('#endDate').text($('#dp5').data('date'));
+					}
+					$('#dp5').datepicker('hide');
+				});
+
+        // disabling dates
+        var nowTemp = new Date();
+        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+        var checkin = $('#dpd1').datepicker({
+          onRender: function(date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+          }
+        }).on('changeDate', function(ev) {
+          if (ev.date.valueOf() > checkout.date.valueOf()) {
+            var newDate = new Date(ev.date)
+            newDate.setDate(newDate.getDate() + 1);
+            checkout.setValue(newDate);
+          }
+          checkin.hide();
+          $('#dpd2')[0].focus();
+        }).data('datepicker');
+        var checkout = $('#dpd2').datepicker({
+          onRender: function(date) {
+            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+          }
+        }).on('changeDate', function(ev) {
+          checkout.hide();
+        }).data('datepicker');
+		});
+	</script>
+ 
 
 </body>
 </html>
