@@ -123,7 +123,7 @@ sub {
 
 img {
 	height:auto;
-	max-width:100%;
+	max-width:150px;
 }
 
 /* =Links
@@ -1483,7 +1483,7 @@ strong.search-excerpt { background: yellow; }
  * Grid items
  */
 #tiles li {
-	width: 220px;
+	width: 150px;
 	background-color: #ffffff;
 	border: 1px solid #dedede;
 	-moz-border-radius: 2px;
